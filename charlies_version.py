@@ -1,7 +1,7 @@
 # variables
 # def printx(x):
 #    print(x)
-
+# addition from dad
 def res():
     restart = input("Do you want to go again?: ")
     if restart.lower() == "yes":
