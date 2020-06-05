@@ -60,7 +60,7 @@ def vargrab1():
 
     while type_test == 0:
         x = input("Enter a number: ")
-        if x.isnumeric():
+        if x.isdigit():
             type_test = 1
             # printx(x)
             return x
@@ -74,7 +74,7 @@ def vargrab2():
 
     while type_test == 0:
         y = input("Enter a number: ")
-        if y.isnumeric():
+        if y.isdigit():
             type_test = 1
             # print(y)
             return y
@@ -84,13 +84,15 @@ def vargrab2():
 
 def mainloop():
     # dead=False
-    operator_list = ["div", "sub", "add", "mul", "pow", "root"]
+    operator_list = ["div", "sub", "add", "mul", "pow", "root", "exit"]
     # Original code
     # var = input("Do you want to divide(div), subtract(sub), add(add), multiply(mul), power(pow), root(root): ")
     while True:
         var = input("Do you want to divide(div), subtract(sub), add(add), multiply(mul), power(pow), root(root): ")
         if var.lower() not in operator_list:
             print("Please enter a valid operator")
+        elif var.lower() == "exit":
+            quit()
         else:
             break
     x = vargrab1()
@@ -119,8 +121,6 @@ def type_of_operation(var, x, y):
     elif var.lower() == "root":
 
         root(x, y)
-    elif var.lower() == "exit":
-        exit()
     else:
 
         print("invalid answer")
