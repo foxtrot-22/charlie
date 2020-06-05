@@ -79,9 +79,17 @@ def vargrab2():
     
    
 def mainloop():
-
-    dead=False
-    var = input("Do you want to divide(div), subtract(sub), add(add), multiply(mul), power(pow), root(root): ")
+    
+    #dead=False
+    operator_list = ["div","sub","add","mul","pow","root"]
+    # Original code
+    # var = input("Do you want to divide(div), subtract(sub), add(add), multiply(mul), power(pow), root(root): ")
+    while True:
+        var = input("Do you want to divide(div), subtract(sub), add(add), multiply(mul), power(pow), root(root): ")
+        if var.lower() not in operator_list:
+            print("Please enter a valid operator")
+        else:
+            break
     x=vargrab1()
     y=vargrab2()
     type_of_operation(var,x,y)
@@ -89,38 +97,30 @@ def mainloop():
 
 def type_of_operation(var,x,y):
     if var.lower() == "div":
-        
-        # x = vargrab1()
-        # y = vargrab2()
        
         division(x, y)
        
     elif var.lower() == "mul":
-        # x = vargrab1()
-        # y = vargrab2()
+
         multiplication(x,y)
     elif var.lower() == "add":
-        # x = vargrab1()
-        # y = vargrab2()
+
         addition(x,y)
     elif var.lower() == "sub":
-        # x = vargrab1()
-        # y = vargrab2()
+
         subtraction(x,y)
     elif var.lower() == "pow":
-        # x = vargrab1()
-        # y = vargrab2()
+
         pow(x,y)
     elif var.lower() == "root":
-        # x = vargrab1()
-        # y = vargrab2()
+
         root(x,y)
     elif var.lower() == "exit":
         exit()
     else:
-        #var.lower() != "sub" or "add" or "mul" or "div" or "pow" or "root":
+
         print("invalid answer")
-        dead=True
+
         mainloop()
 mainloop()
-#testloop()
+
